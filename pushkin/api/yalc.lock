@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "hello_api": {
+      "signature": "ca67ac3a8534d89dfaf70781a71e2630",
+      "file": true
+    }
+  }
+}
