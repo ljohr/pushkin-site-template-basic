@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "@craco/craco": "^7.1.0",
     "aphrodite": "^2.4.0",
     "axios": "1.6.8",
@@ -24,7 +25,7 @@
     "react-router-redux": "^4.0.8",
     "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
-    "react-social-icons": "^4.1.0",
+    "react-social-icons": "^6.18.0",
     "redux": "^4.0.4",
     "redux-form": "^8.3.6",
     "redux-mock-store": "^1.5.4",

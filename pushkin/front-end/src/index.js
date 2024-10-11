@@ -7,8 +7,9 @@ import 'react-app-polyfill/stable';
 // Basic react imports
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { Auth0Provider } from '@auth0/auth0-react';
 //import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import {
 //  createBrowserRouter,
 //  RouterProvider,
@@ -53,7 +54,15 @@ const root = createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <Auth0Provider
+        domain={process.env.REACT_APP_DOMAIN}
+        clientId={process.env.REACT_APP_CLIENT_ID}
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+        }}
+      >
+        <App />
+      </Auth0Provider>
     </Router>
   </Provider>
 );
