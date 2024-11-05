@@ -3,8 +3,8 @@
 //import util from 'util';
 //import fs from 'fs';
 //import jsYaml from 'js-yaml';
-import { pushkinConfig } from './.pushkin.js'
-import { debug, codespaces, codespaceName } from './.env.js'
+import { pushkinConfig } from './.pushkin.js';
+import { debug, codespaces, codespaceName } from './.env.js';
 
 // Front-end configuration file
 
@@ -29,9 +29,9 @@ if (debug) {
   const rootDomain = pushkinConfig.info.rootDomain;
   if (pushkinConfig.apiEndpoint) {
     //What's in the YAML can override default
-    apiEndpoint = pushkinConfig.apiEndpoint
-  } else{
-    apiEndpoint = 'https://api.' + rootDomain;    
+    apiEndpoint = pushkinConfig.apiEndpoint;
+  } else {
+    apiEndpoint = 'https://api.' + rootDomain;
   }
   frontEndURL = 'https://' + rootDomain + '/callback';
   logoutURL = 'https://' + rootDomain;
@@ -56,5 +56,5 @@ export const CONFIG = {
 
   fc: pushkinConfig.fc,
   authClientID: '',
-  authDomain: ''
+  authDomain: '',
 };

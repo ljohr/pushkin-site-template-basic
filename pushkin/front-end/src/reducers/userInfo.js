@@ -1,7 +1,7 @@
 import { SET_USER_ID } from '../actions/userInfo';
 
 const initialState = {
-  userID: null
+  userID: null,
 };
 
 export default function error(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function error(state = initialState, action) {
     case SET_USER_ID:
       return {
         ...state,
-        userID: action.id
+        userID: action.id,
       };
     default:
       return state;

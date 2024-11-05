@@ -33,7 +33,7 @@ function QuizPage(props) {
           </div>
         </Jumbotron>
         <Row>
-          {experiments.map(e => {
+          {experiments.map((e) => {
             return (
               <QuizTile
                 quizid={e.shortName}

@@ -12,7 +12,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import {
 //  createBrowserRouter,
-//  RouterProvider,
+//  RouterProvider,pushkin prep
 //} from "react-router-dom";
 
 // redux
@@ -50,13 +50,15 @@ const onRedirectCallback = (appState) => {
 
 //Renders the front end
 const root = createRoot(document.getElementById('root'));
+const DOMAIN = 'dev-85s6eky6d7q2rhkr.us.auth0.com';
+const CLIENTID = 'HLteobLdHAdmAgEw6nl4U4gnSWrQiGSX';
 
 root.render(
   <Provider store={store}>
     <Router>
       <Auth0Provider
-        domain={process.env.REACT_APP_DOMAIN}
-        clientId={process.env.REACT_APP_CLIENT_ID}
+        domain={DOMAIN}
+        clientId={CLIENTID}
         authorizationParams={{
           redirect_uri: window.location.origin,
         }}

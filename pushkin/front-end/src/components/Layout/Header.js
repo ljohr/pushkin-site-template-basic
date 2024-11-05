@@ -1,7 +1,8 @@
 // ./src/components/Layout/Navigation.js
 
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
+import { useAuth0 } from '@auth0/auth0-react';
 
 //redux
 import { connect } from 'react-redux';
@@ -20,8 +21,9 @@ const mapStateToProps = (state) => {
 };
 
 const Header = (props) => {
-  const isAuthenticated = false;
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const user = null;
+  console.log('authstate', isAuthenticated);
 
   useEffect(() => {
     props.dispatch(getUser(isAuthenticated, user));
@@ -56,6 +58,25 @@ const Header = (props) => {
           <LinkContainer to="/about">
             <Nav.Link>About</Nav.Link>
           </LinkContainer>
+        </Nav>
+        <Nav className="ml-auto">
+          {/* Show login or logout button based off current auth status */}
+          {!isAuthenticated ? (
+            <Button variant="outline-light" onClick={() => loginWithRedirect()}>
+              Log In
+            </Button>
+          ) : (
+            <Button
+              variant="outline-light"
+              onClick={() =>
+                logout({
+                  returnTo: window.location.origin, // Redirect back to home after logout
+                })
+              }
+            >
+              Log Out
+            </Button>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

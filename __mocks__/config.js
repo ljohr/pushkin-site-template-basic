@@ -3,9 +3,9 @@
 // Front-end configuration file
 
 // --- API ---
-let apiEndpoint; 
-let frontEndURL; 
-let logoutURL; 
+let apiEndpoint;
+let frontEndURL;
+let logoutURL;
 
 const rootDomain = 'http://localhost';
 apiEndpoint = rootDomain + '/api';
@@ -31,5 +31,5 @@ export const CONFIG = {
 
   fc: null,
   authClientID: '',
-  authDomain: ''
+  authDomain: '',
 };
